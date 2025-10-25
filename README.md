@@ -25,7 +25,7 @@ Este script atua para neutralizar a ameaça sem quebrar a funcionalidade que voc
 
 ## Como Usar
 
-1.  Baixe o arquivo `fix-steamtools.py` deste repositório.
+1.  Baixe o arquivo `fix-steamtools.exe` na seção "Releases" ou `fix-steamtools.py` deste repositório.
 2.  Certifique-se de que a Steam esteja **completamente fechada**.
 3.  Clique com o botão direito no `fix-steamtools.py` e selecione **"Executar como administrador"**.
 4.  Leia o aviso legal e, se concordar, digite `EU CONCORDO` e pressione Enter.
