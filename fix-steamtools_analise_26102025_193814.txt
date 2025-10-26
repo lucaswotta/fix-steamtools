@@ -1,0 +1,52 @@
+Relatório de Análise para: C:\Program Files (x86)\Steam\hid.dll
+Data da Análise: 26/10/2025 19:38:14
+Tamanho: 591272 bytes
+MD5: 3b16ac215ab6f104d35b27490d6c11b9
+SHA256: 432fdc7eea7d9f0af7a8affeefee742e0bf93322776dd999de7efb43ab8694aa
+Assinatura Digital: ASSINADA DIGITALMENTE (Inesperado!)
+
+=======================================================
+ NÍVEL 1: FUNÇÕES POTENCIALMENTE PERIGOSAS (IMPORTAÇÕES)
+=======================================================
+
+[!] DLL Importada: CRYPT32.dll (Médio Risco. Funções de criptografia/certificados.)
+    -> Função: CryptQueryObject
+    -> Função: CertCreateCertificateChainEngine
+    -> Função: CertGetNameStringA
+    -> Função: CertGetCertificateChain
+    -> Função: CertFreeCertificateChain
+    -> Função: CertAddCertificateContextToStore
+    -> Função: CryptStringToBinaryA
+    -> Função: CertFreeCertificateContext
+    -> Função: CertFindCertificateInStore
+    -> Função: CertEnumCertificatesInStore
+    -> ... (e mais 3)
+[!] DLL Importada: WS2_32.dll (Alto Risco. Contém funções de rede.)
+    -> Função: closesocket
+    -> Função: recv
+    -> Função: freeaddrinfo
+    -> Função: getaddrinfo
+    -> Função: ioctlsocket
+    -> Função: listen
+    -> Função: htonl
+    -> Função: accept
+    -> Função: select
+    -> Função: __WSAFDIsSet
+    -> ... (e mais 15)
+[!] DLL Importada: ADVAPI32.dll (Médio Risco. Funções 'Crypt' (criptografia).)
+    -> Função: CryptReleaseContext
+    -> Função: CryptGetHashParam
+    -> Função: CryptGenRandom
+    -> Função: CryptCreateHash
+    -> Função: CryptHashData
+    -> Função: CryptDestroyHash
+    -> Função: CryptAcquireContextA
+
+=======================================================
+ NÍVEL 2: STRINGS SUSPEITAS ENCONTRADAS NO ARQUIVO
+=======================================================
+
+[!] String Encontrada: 'LoadLibraryExW' (Justificativa: Carregamento Dinâmico de DLL)
+[!] String Encontrada: 'LoadLibraryA' (Justificativa: Carregamento Dinâmico de DLL)
+[!] String Encontrada: 'LoadLibraryExA' (Justificativa: Carregamento Dinâmico de DLL)
+[!] String Encontrada: 'GetProcAddress' (Justificativa: Obtenção Dinâmica de Função)
