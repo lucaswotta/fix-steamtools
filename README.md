@@ -1,6 +1,6 @@
 # FIX-STEAMTOOLS: Neutralizador de hid.dll
 
-Script em Python (v0.2.0) projetado para analisar e neutralizar componentes potencialmente maliciosos encontrados na `hid.dll` modificada por ferramentas como a "SteamTools", sem quebrar sua funcionalidade principal (carregamento de manifestos).
+Script em Python (v0.3.0) projetado para analisar e neutralizar componentes potencialmente maliciosos encontrados na `hid.dll` modificada por ferramentas como a "SteamTools", sem quebrar sua funcionalidade principal (carregamento de manifestos).
 
 [![Licença](https://img.shields.io/badge/Licença-MIT-blue)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/lucaswotta/fix-steamtools)](https://github.com/lucaswotta/fix-steamtools/stargazers)
@@ -31,7 +31,7 @@ O `fix-steamtools` aplica correções técnicas para mitigar esses riscos espec�
 * **Análise Detalhada:** Verifica importações, strings suspeitas e assinatura digital, gerando um relatório (`.txt`).
 * **Neutralização Tripla:** Aplica as três camadas de correção descritas acima.
 * **Detecção Automática:** Localiza a instalação da Steam e a DLL alvo (`hid.dll`, `hid64.dll`, etc.).
-* **Segurança:** Cria backup (`.bak`), aplica patches de forma atômica (evita corrupção) e realiza rollback automático se a verificação pós-patch falhar.
+* **Segurança:** Cria backup (`.bak`), aplica patches de forma atômica (evita corrupção), verifica integridade da estrutura PE após modificações, e realiza rollback automático se a verificação pós-patch falhar.
 * **Automação:** Verifica se a Steam está aberta e oferece para fechá-la; instala dependências Python (`pefile`, `psutil`) automaticamente se necessário.
 * **Limpeza:** Remove entradas duplicadas/antigas do `hosts` criadas por versões anteriores do script.
 
@@ -48,7 +48,7 @@ O `fix-steamtools` aplica correções técnicas para mitigar esses riscos espec�
 6.  **Aguarde:** O script aplicará as 3 camadas e verificará o resultado.
 7.  **Concluído:** Verifique a mensagem final de sucesso ou falha. Pressione Enter para fechar. Agora você pode abrir a Steam.
 
-## ⚠️ Aviso de Antivírus (Falso Positivo)
+## Aviso de Antivírus (Falso Positivo)
 
 Seu antivírus (Windows Defender, etc.) **provavelmente sinalizará** o `fix-steamtools.exe` (ou `.py`).
 
@@ -56,7 +56,7 @@ Seu antivírus (Windows Defender, etc.) **provavelmente sinalizará** o `fix-ste
 * Modifica o arquivo `hosts` (para bloquear C2s).
 * Modifica um arquivo `.dll` (para aplicar patches de segurança).
 
-O código-fonte está aqui aberto para auditoria. Adicione uma exceção no seu antivírus se necessário.
+O código-fonte está aqui aberto para a sua auditoria. Adicione uma exceção no seu antivírus se necessário.
 
 ## Disclaimer (Aviso Legal)
 
@@ -64,4 +64,4 @@ Este script é para fins educacionais e de segurança. O autor não se responsab
 
 ## Licença
 
-MIT License - Copyright (c) 2025 Lucas Motta (Veja `LICENSE` para detalhes).
+MIT License - Copyright (c) 2025 Lucas Motta.
