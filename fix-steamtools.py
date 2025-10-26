@@ -53,7 +53,10 @@ TARGETS_TO_PATCH_IAT = [
 # Alvos da Camada 2 (Bloqueio de Rede)
 DOMAINS_TO_BLOCK = [
     "update.wudrm.com",
-    "stools.oss-cn-shanghai.aliyuncs.com"
+    "wudrm.com",
+    "stools.oss-cn-shanghai.aliyuncs.com",
+    "update.wudrm.com",
+    "update.steamui.com"
 ]
 # Marcador para garantir que não duplicamos as entradas no hosts
 HOSTS_BLOCK_MARKER = "# [FIX-STEAMTOOLS] Bloco de domínios maliciosos"
@@ -66,7 +69,10 @@ OLD_HOSTS_MARKERS = [
 # Alvos da Camada 3 (String Nulling) - Apenas C2s conhecidos (seguro)
 STRINGS_TO_NULL = [
     re.compile(b"update.wudrm.com", re.IGNORECASE),
-    re.compile(b"stools.oss-cn-shanghai.aliyuncs.com", re.IGNORECASE)
+    re.compile(b"wudrm.com", re.IGNORECASE),
+    re.compile(b"stools.oss-cn-shanghai.aliyuncs.com", re.IGNORECASE),
+    re.compile(b"steamui.com", re.IGNORECASE),
+    re.compile(b"update.steamui.com", re.IGNORECASE)
 ]
 
 
@@ -82,7 +88,10 @@ SUSPICIOUS_ADVAPI_FUNCS_PREFIX = b"Crypt"
 SUSPICIOUS_STRING_PATTERNS = {
     # Domínios C2 Conhecidos (redundante com STRINGS_TO_NULL, mas bom para relatório)
     re.compile(b"update.wudrm.com", re.IGNORECASE): "Domínio de C2 Conhecido",
+    re.compile(b"wudrm.com", re.IGNORECASE): "Domínio de C2 Conhecido",
     re.compile(b"stools.oss-cn-shanghai.aliyuncs.com", re.IGNORECASE): "Domínio de C2 Conhecido",
+    re.compile(b"update.steamui.com", re.IGNORECASE): "Domínio de C2 Conhecido",
+    re.compile(b"steamui.com", re.IGNORECASE): "Domínio de C2 Conhecido",
     # Genéricos
     re.compile(b"powershell", re.IGNORECASE): "Possível executor de script (PowerShell)",
     re.compile(b"cmd.exe", re.IGNORECASE): "Possível executor de comando (CMD)",
@@ -419,7 +428,7 @@ def get_user_consent_to_patch(analysis_report_str):
         print("\n\n[X] Operação cancelada pelo usuário.")
         sys.exit(0)
 
-# --- NOVA FUNÇÃO v0.2.0 ---
+# --- NOVA FUNÇÃO v0.2.1 ---
 def apply_layer_3_string_nulling(data: bytearray) -> int:
     """
     CAMADA 3: STRING NULLING
@@ -452,7 +461,7 @@ def apply_layer_3_string_nulling(data: bytearray) -> int:
     return neutralized_count
 
 
-# --- MODIFICADA v0.2.0 ---
+# --- MODIFICADA v0.2.1 ---
 def apply_dll_patches(dll_path):
     """
     Aplica as Camadas 1 (IAT) e 3 (String Nulling) de forma atômica.
@@ -641,7 +650,7 @@ def apply_layer_2_block():
         print(f"[X] FALHA ao modificar o arquivo hosts: {e}")
         return False
 
-# --- MODIFICADA v0.2.0 ---
+# --- MODIFICADA v0.2.1 ---
 def verify_patches(dll_path):
     """Função de verificação final. Audita as 3 camadas."""
     print("\n" + "="*80)
@@ -770,7 +779,7 @@ def rollback_from_backup(dll_path):
 def main():
     """Orquestra a execução completa do script."""
     print("="*80)
-    print("      FIX-STEAMTOOLS: Neutralizador de hid.dll (v0.2.0)")
+    print("      FIX-STEAMTOOLS: Neutralizador de hid.dll (v0.2.1)")
     print("="*80)
     
     try:
