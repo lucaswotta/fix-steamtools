@@ -55,7 +55,8 @@ DOMAINS_TO_BLOCK = [
     "update.wudrm.com",
     "wudrm.com",
     "stools.oss-cn-shanghai.aliyuncs.com",
-    "update.steamui.com"
+    "update.steamui.com",
+    "steamui.com"
 ]
 # Marcador para garantir que não duplicamos as entradas no hosts
 HOSTS_BLOCK_MARKER = "# [FIX-STEAMTOOLS] Bloco de domínios maliciosos"
