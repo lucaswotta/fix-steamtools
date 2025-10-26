@@ -63,9 +63,4 @@ O código-fonte está aqui aberto para a sua auditoria. Adicione uma exceção n
 Este script é para fins educacionais e de segurança. O autor não se responsabiliza por danos, perdas ou banimentos. **Use por sua conta e risco.** A `hid.dll` modificada ainda é de fonte não confiável; este script apenas mitiga os riscos *conhecidos*.
 
 ## Licença
-
-<<<<<<< HEAD
 MIT License - Copyright (c) 2025 Lucas Motta.
-=======
-MIT License - Copyright (c) 2025 Lucas Motta.
->>>>>>> 5bc895bafcae8621d2f7be8e15677aef3c426793
