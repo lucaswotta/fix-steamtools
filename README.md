@@ -64,4 +64,4 @@ Este script é para fins educacionais e de segurança. O autor não se responsab
 
 ## Licença
 
-MIT License - Copyright (c) 2025 Lucas Motta (Veja `LICENSE` para detalhes).
+MIT License - Copyright (c) 2025 Lucas Motta.
