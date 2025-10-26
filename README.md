@@ -48,7 +48,7 @@ O `fix-steamtools` aplica correções técnicas para mitigar esses riscos espec�
 6.  **Aguarde:** O script aplicará as 3 camadas e verificará o resultado.
 7.  **Concluído:** Verifique a mensagem final de sucesso ou falha. Pressione Enter para fechar. Agora você pode abrir a Steam.
 
-## ⚠️ Aviso de Antivírus (Falso Positivo)
+## Aviso de Antivírus (Falso Positivo)
 
 Seu antivírus (Windows Defender, etc.) **provavelmente sinalizará** o `fix-steamtools.exe` (ou `.py`).
 
@@ -56,7 +56,7 @@ Seu antivírus (Windows Defender, etc.) **provavelmente sinalizará** o `fix-ste
 * Modifica o arquivo `hosts` (para bloquear C2s).
 * Modifica um arquivo `.dll` (para aplicar patches de segurança).
 
-O código-fonte está aqui aberto para auditoria. Adicione uma exceção no seu antivírus se necessário.
+O código-fonte está aqui aberto para a sua auditoria. Adicione uma exceção no seu antivírus se necessário.
 
 ## Disclaimer (Aviso Legal)
 
