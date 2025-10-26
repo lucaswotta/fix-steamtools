@@ -55,7 +55,6 @@ DOMAINS_TO_BLOCK = [
     "update.wudrm.com",
     "wudrm.com",
     "stools.oss-cn-shanghai.aliyuncs.com",
-    "update.wudrm.com",
     "update.steamui.com"
 ]
 # Marcador para garantir que não duplicamos as entradas no hosts
